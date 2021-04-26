@@ -1,2 +1,22 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+
+<table>
+  <div>
+    <tr>
+      <th>Content</th>
+      <th>User</th>
+    </tr>
+  </div>
+
+  <div>
+    <% @favorites.each do |fav| %>
+    <tr>
+      <td><%= fav.blog.content %></td>
+      <td><%= fav.blog.user.name %></td>
+    </tr>
+    <% end %>
+  </div>
+</table>
+
+<%= link_to 'Back', blogs_path %>
